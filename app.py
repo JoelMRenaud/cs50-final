@@ -6,7 +6,7 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import date
-from helpers import apology, login_required, lookup, usd
+from helpers import login_required, apology
 
 # Custom filter
 app = Flask(__name__)
