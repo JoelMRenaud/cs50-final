@@ -31,3 +31,7 @@ h1 {
   body {
     background-color: #196880d7;
   }
+  
+  .navright {
+    text-align: right;
+  }
