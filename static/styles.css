@@ -3,3 +3,7 @@ ul.nav {
     margin: 0;
     padding: 0;
   }
+
+h1.center {
+    text-align: center;
+}
