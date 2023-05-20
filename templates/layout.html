@@ -3,29 +3,30 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link href="/static/styles.css" rel="stylesheet">
         <title>
             {% block title %}
             {% endblock %}
         </title>
     </head>
     <body>
-        <nav>
-        <div>
-        <h1 class="center">
-            Cat vs Dogs!
-        </h1>
-        {% if session["user_id"] %}
-            <ul class="nav">
-                <a class="nav-link" href="/logout">Log Out</a>
-            </ul>
-        {% else %}
-            <ul>
-                <a class="nav-link" href="/register">Register</a>
-                <a class="nav-link" href="/login">Log In</a>
-            </ul>
-        {% endif %}
-        </div>
-    </nav>
+        <header>
+            <div>
+                <h1 class="center">
+                    Cat vs Dogs!
+                </h1>
+                {% if session["user_id"] %}
+                    <ul class="nav">
+                        <a class="nav-link" href="/logout">Log Out</a>
+                    </ul>
+                {% else %}
+                    <ul>
+                        <a class="nav-link" href="/register">Register</a>
+                        <a class="nav-link" href="/login">Log In</a>
+                    </ul>
+                {% endif %}
+            </div>
+        </header>
         {% block body %}{% endblock %}
     </body>
 </html>
