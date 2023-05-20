@@ -14,16 +14,16 @@
             Cat vs Dogs!
         </h1>
         {% if session["user_id"] %}
-            <ul class="navbar-nav me-auto mt-2">
+            <ul class="nav">
 
             </ul>
-            <ul class="navbar-nav ms-auto mt-2">
-                <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+            <ul class="nav">
+                <a class="nav-link" href="/logout">Log Out</a>
             </ul>
         {% else %}
             <ul>
-                <li><a class="nav-link" href="/register">Register</a></li>
-                <li><a class="nav-link" href="/login">Log In</a></li>
+                <a class="nav-link" href="/register">Register</a>
+                <a class="nav-link" href="/login">Log In</a>
             </ul>
         {% endif %}
         </div>
