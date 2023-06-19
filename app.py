@@ -24,6 +24,20 @@ db = SQL("sqlite:///database.db")
 def home():
     return render_template("home.html")
 
+@app.route("/post", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+
+        if not request.form.get("image"):
+            return apology("must provide image address", 403)
+        
+        else:
+            db.execute("INSERT INTO images (address, username) VALUES (?, ?)", request.form.get("image"),
+                        session["user_id"])
+            return redirect("/")
+    else:
+        return render_template("/post.html")
+    
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""

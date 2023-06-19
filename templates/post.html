@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+{% block body %}
+    <h2>
+        To find an image address go to https://support.google.com/websearch/answer/118238?hl=en&co=GENIE.Platform%3DDesktop
+    </h2>
+    <form action="/post" method="post">
+        <div>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="image" name="image" placeholder="Image address" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Post!</button>
+    </form>
+
+{% endblock %}
