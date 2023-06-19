@@ -14,7 +14,7 @@ h1 {
   overflow: hidden;
   }
   
-.topnav a {
+a.nav-link {
   float: left;
   color: #f2f2f2;
   text-align: center;
