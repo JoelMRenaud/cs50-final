@@ -25,7 +25,7 @@ def home():
     return render_template("home.html")
 
 @app.route("/post", methods=["GET", "POST"])
-def login():
+def post():
     if request.method == "POST":
 
         if not request.form.get("image"):
