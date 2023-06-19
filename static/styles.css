@@ -62,6 +62,8 @@ body {
 }
 
 #post {
+  text-align: center;
+  width: 25%;
   border: 10px solid #28aad2;
 }
   
