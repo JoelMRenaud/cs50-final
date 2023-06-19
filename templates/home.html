@@ -8,12 +8,12 @@
     <img src="/static/Cats vs Dogs.png" alt="Cats_vs_dogs_img", width="1200", class="center">
     <hr>
     {% for image in images %}
-        <div id="parent">
-            <img class="postimg child", src="{{ image['address']}}">
+        <li>
+            <img class="postimg", src="{{ image['address']}}">
             {% if admin == 1 %}
-            <div class="child"><form action="/" method="post"><button name="admin" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form></div>
+            <form action="/" method="post"><button name="admin" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form></div>
             {% endif %}
-        </div>
+        </li>
     {% endfor %}
 
 {% endblock %}
