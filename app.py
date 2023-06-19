@@ -41,7 +41,7 @@ def post():
             return apology("must provide image address", 403)
         
         else:
-            db.execute("INSERT INTO images (address, user_id) VALUES (?, ?)", request.form.get("image"), session["user_id"])
+            db.execute("INSERT INTO images (address, username) VALUES (?, ?)", request.form.get("image"), session["username"])
             return redirect("/")
     else:
         return render_template("/post.html")
@@ -73,6 +73,7 @@ def login():
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
+        session["username"] = rows[0]["username"]
 
         # Redirect user to home page
         return redirect("/")
