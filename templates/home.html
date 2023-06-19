@@ -10,7 +10,7 @@
     {% for image in images %}
         <img class="postimg", src="{{ image['address']}}">
         {% if admin == 1 %}
-            <button type="submit"><img class="admin", src="/static/Red_X.svg.png"></button>
+            <form action="/" method="post"><button name="admin" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form>
         {% endif %}
     {% endfor %}
 

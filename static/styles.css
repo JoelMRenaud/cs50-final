@@ -45,6 +45,8 @@ body {
 }
 
 .admin {
-width: 50; height: min-content;
+  width: 50; 
+  height: min-content;
+  background-color: transparent !important;
 }
   

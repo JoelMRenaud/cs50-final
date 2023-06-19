@@ -19,9 +19,11 @@ Session(app)
 # Configure app to use SQLite database
 db = SQL("sqlite:///database.db")
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 @login_required
 def home():
+    if request.method == "POST":
+        db.execute("DELETE FROM images WHERE id =  ?", request.form.get("admin"))
     if session["user_id"] == 1:
         admin = 1
     else:
