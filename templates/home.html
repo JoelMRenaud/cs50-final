@@ -9,7 +9,7 @@
     <hr>
     {% for image in images %}
         <div id="parent">
-            <div class="child"><img class="postimg center", src="{{ image['address']}}"></div>
+            <div class="child"><img class="postimg", src="{{ image['address']}}"></div>
             {% if admin == 1 %}
             <div class="child"><form action="/" method="post"><button name="admin" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form></div>
             {% endif %}
