@@ -28,7 +28,7 @@ def home():
         admin = 1
     else:
         admin = 0
-    rows = db.execute("SELECT * FROM images")
+    rows = db.execute("SELECT * FROM images ORDER BY id DESC")
     return render_template("home.html", images=rows, admin=admin)
     
 
