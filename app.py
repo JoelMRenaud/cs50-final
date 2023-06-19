@@ -29,7 +29,8 @@ def home():
     else:
         admin = 0
     rows = db.execute("SELECT * FROM images")
-    return render_template("home.html", images=rows, admin=admin)
+    users = db.execute("SELECT * FROM users")
+    return render_template("home.html", images=rows, admin=admin, users=users)
     
 
 @app.route("/post", methods=["GET", "POST"])

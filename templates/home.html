@@ -14,6 +14,8 @@
             <div class="child"><form action="/" method="post"><button name="admin" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form></div>
             {% endif %}
         </div>
+        <p style="text-align: center;">Post by: {{ users[image['user_id']]['id'] }}</p>
+        <br>
     {% endfor %}
 
 {% endblock %}
