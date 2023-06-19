@@ -22,8 +22,13 @@ db = SQL("sqlite:///database.db")
 @app.route("/")
 @login_required
 def home():
+    if session["user_id"] == 1:
+        admin = 1
+    else:
+        admin = 0
     rows = db.execute("SELECT * FROM images")
-    return render_template("home.html", images=rows)
+    return render_template("home.html", images=rows, admin=admin)
+    
 
 @app.route("/post", methods=["GET", "POST"])
 def post():
