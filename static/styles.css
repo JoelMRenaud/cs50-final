@@ -50,7 +50,9 @@ body {
   height: min-content;
   background-color: transparent !important;
 }
-
+.parent {
+  text-align: center;
+}
 .child {
   display: inline-block;
 }
