@@ -51,4 +51,13 @@ body {
   background-color: transparent !important;
   display: inline-block;
 }
+
+#parent {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.child {
+  display: inline-block;
+}
   
