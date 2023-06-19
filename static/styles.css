@@ -49,6 +49,8 @@ body {
   width: 50; 
   height: min-content;
   background-color: transparent !important;
+  margin-bottom: 500px;
+  margin-left: 50px;
 }
 
 #parent {
