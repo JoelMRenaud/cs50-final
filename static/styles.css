@@ -48,5 +48,6 @@ body {
   width: 50; 
   height: min-content;
   background-color: transparent !important;
+  float: left;
 }
   
