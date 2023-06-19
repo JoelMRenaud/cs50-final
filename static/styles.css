@@ -44,5 +44,7 @@ body {
   background-color: #196880d7;
 }
 
-
+.admin {
+width: 50; height: min-content;
+}
   
