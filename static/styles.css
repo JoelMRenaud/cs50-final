@@ -33,7 +33,7 @@ a.nav-link {
   width: 800;
   height: min-content;
   border: 4px solid lightslategray;
-  
+  text-align: center;
 }
   
 .topnav a:hover {
@@ -49,7 +49,6 @@ body {
   width: 50; 
   height: min-content;
   background-color: transparent !important;
-  display: inline-block;
 }
 
 .child {
