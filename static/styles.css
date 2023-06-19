@@ -30,8 +30,8 @@ a.nav-link {
 }
 
 .postimg {
-  min-width : 300px;
-  max-width : 400px;
+  min-width : 500px;
+  max-width : 600px;
   object-fit: contain;
   border: 4px solid lightslategray;
   text-align: center !important;
@@ -64,6 +64,6 @@ body {
 #post {
   text-align: center;
   width: 25%;
-  border: 10px solid #28aad2;
+  padding: 10px solid #28aad2;
 }
   
