@@ -31,7 +31,6 @@ a.nav-link {
 
 .postimg {
   width: 800;
-  height: min-content;
   border: 4px solid lightslategray;
   text-align: center;
 }
