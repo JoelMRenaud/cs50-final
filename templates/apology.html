@@ -6,8 +6,8 @@
 
 {% block body %}
 
-    <h1>
-        {{ message }}
-    </h1>
+    {% for image in images %}
+        <img class="postimg", src="{{ image['address']}}">
+    {% endfor %}
 
 {% endblock %}

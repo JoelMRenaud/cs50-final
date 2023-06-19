@@ -22,7 +22,8 @@ db = SQL("sqlite:///database.db")
 @app.route("/")
 @login_required
 def home():
-    return render_template("home.html")
+    rows = db.execute("SELECT * FROM images")
+    return render_template("home.html", images=rows)
 
 @app.route("/post", methods=["GET", "POST"])
 def post():
