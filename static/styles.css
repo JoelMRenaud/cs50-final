@@ -49,8 +49,7 @@ body {
   width: 50; 
   height: min-content;
   background-color: transparent !important;
-  padding-bottom: 200px;
-  padding-left: 50px;
+  vertical-align: top;
 }
 
 #parent {
