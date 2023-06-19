@@ -62,6 +62,6 @@ body {
 }
 
 #post {
-  background-color: #28aad2 !important;
+  border: 10px solid #28aad2;
 }
   
