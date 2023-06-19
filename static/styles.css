@@ -34,7 +34,7 @@ a.nav-link {
   max-width : 400px;
   object-fit: contain;
   border: 4px solid lightslategray;
-  text-align: center;
+  text-align: center !important;
 }
   
 .topnav a:hover {
