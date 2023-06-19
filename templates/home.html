@@ -9,6 +9,9 @@
     <hr>
     {% for image in images %}
         <img class="postimg", src="{{ image['address']}}">
+        {% if admin == 1 %}
+            <button type="submit"><img style="width: 50; height: min-content;", src="/static/Red_X.svg.png"></button>
+        {% endif %}
     {% endfor %}
 
 {% endblock %}
