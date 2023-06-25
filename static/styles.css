@@ -66,10 +66,3 @@ body {
   width: 700px;
   border: 10px solid #28aad2;
 }
-
-.like {
-  min-width : 50px;
-  max-width : 50px;
-  min-height : 50px;
-  max-height: 50px;
-}

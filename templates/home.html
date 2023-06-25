@@ -16,8 +16,8 @@
                 {% endif %}
             </div>
             <div>
-                <p style="text-align: center;">Post by: {{ image['username'] }}</p>
-                <form action="/" method="post"><button name="like" value="{{ image['id']}}" class="like"><img src="/static/like.png"></button></form>
+                <p>Post by: {{ image['username'] }}</p>
+                <form action="/" method="post"><button name="like" value="{{ image['id']}}"><img src="/static/like.png"></button></form>
             </div>
         </div>
         <br>
