@@ -15,8 +15,10 @@
                 <div class="child"><form action="/" method="post"><button name="admin" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form></div>
                 {% endif %}
             </div>
-            <p style="text-align: center;">Post by: {{ image['username'] }}</p>
-            <form action="/" method="post"><button name="like" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form>
+            <div>
+                <p style="text-align: center;">Post by: {{ image['username'] }}</p>
+                <form action="/" method="post"><button name="like" value="{{ image['id']}}"><img class="admin", src="/static/like.png"></button></form>
+            </div>
         </div>
         <br>
     {% endfor %}
