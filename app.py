@@ -28,9 +28,8 @@ def home():
         if admin:
             db.execute("DELETE FROM images WHERE id =  ?", admin)
         if like:
-            db.execute("UPDATE images SET likes = likes + 1 WHERE id = ?", like)
-            alreadyliked = db.execute("SELECT COUNT(*) FROM like WHERE image_id = ? AND user_id = ?", like, session["user_id"])
-            if alreadyliked != 0:
+            alreadyliked = db.execute("SELECT * like WHERE image_id = ? AND user_id = ?", like, session["user_id"])
+            if not alreadyliked:
                 db.execute("UPDATE images SET likes = likes + 1 WHERE id = ?", like)
                 db.execute("INSERT INTO like (image_id, user_id) VALUES (?, ?)", like, session["user_id"])
     if session["user_id"] == 1:
