@@ -16,6 +16,7 @@
                 {% endif %}
             </div>
             <p style="text-align: center;">Post by: {{ image['username'] }}</p>
+            <form action="/" method="post"><button name="like" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form>
         </div>
         <br>
     {% endfor %}
