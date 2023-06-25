@@ -25,6 +25,7 @@ def home():
     if request.method == "POST":
         db.execute("DELETE FROM images WHERE id =  ?", request.form.get("admin"))
         db.execute("UPDATE images SET likes = likes + 1 WHERE id = ?", request.form.get("like"))
+        db.execute("INSERT INTO like (image_id, user_id) VALUES (?, ?)", request.form.get("like"), session["username"])
     if session["user_id"] == 1:
         admin = 1
     else:
