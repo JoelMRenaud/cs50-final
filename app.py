@@ -41,7 +41,7 @@ def post():
             return apology("must provide image address", 403)
         
         else:
-            db.execute("INSERT INTO images (address, username) VALUES (?, ?)", request.form.get("image"), session["username"])
+            db.execute("INSERT INTO images (address, username, likes) VALUES (?, ?, 0)", request.form.get("image"), session["username"])
             return redirect("/")
     else:
         return render_template("/post.html")
