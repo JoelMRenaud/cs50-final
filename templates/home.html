@@ -12,12 +12,12 @@
             <div id="parent">
                 <div class="child"><img class="postimg", src="{{ image['address']}}"></div>
                 {% if admin == 1 %}
-                <div class="child"><form action="/" method="post"><button name="admin" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form></div>
+                <div class="child"><form action="/" method="post"><button name="admin" value="{{ image['id']}}" class="transparent"><img class="admin", src="/static/Red_X.png"></button></form></div>
                 {% endif %}
             </div>
             <div>
                 <p style="text-align: center;">Post by: {{ image['username'] }}</p>
-                <form action="/" method="post"><button name="like" value="{{ image['id']}}"><img class="admin", src="/static/like.png"></button></form>
+                <form action="/" method="post"><button name="like" value="{{ image['id']}}" class="transparent small"><img class="admin", src="/static/like.png"></button></form>
             </div>
         </div>
         <br>

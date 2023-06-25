@@ -51,6 +51,7 @@ body {
   height: min-content;
   background-color: transparent !important;
   vertical-align: text-top;
+  background-size: 46px 30px;
 }
 
 #parent {
