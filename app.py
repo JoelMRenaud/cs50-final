@@ -24,7 +24,8 @@ db = SQL("sqlite:///database.db")
 def home():
     if request.method == "POST":
         db.execute("DELETE FROM images WHERE id =  ?", request.form.get("admin"))
-        if db.execute("SELECT * FROM like WHERE image_id = ? AND user_id = ?", request.form.get("like"), session["user_id"]) != None:
+        alreadyliked = ("SELECT * FROM like WHERE image_id = ? AND user_id = ?", request.form.get("like"), session["user_id"])
+        if not alreadyliked:
             db.execute("UPDATE images SET likes = likes + 1 WHERE id = ?", request.form.get("like"))
             db.execute("INSERT INTO like (image_id, user_id) VALUES (?, ?)", request.form.get("like"), session["user_id"])
     if session["user_id"] == 1:
