@@ -53,7 +53,7 @@ def home():
 def post():
     if request.method == "POST":
         image = request.form.get("image")
-        animal = request.form.get("animal"
+        animal = request.form.get("animal")
         if not image:
             return apology("must provide image address", 403)
         elif not animal:
