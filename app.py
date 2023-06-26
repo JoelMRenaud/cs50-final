@@ -30,7 +30,7 @@ def home():
             db.execute("DELETE FROM like WHERE image_id =  ?", admin)
         if like:
             exist = db.execute("SELECT id FROM images WHERE id = ?", like)
-            if exist:
+            if exist.isdigit():
                 checkliked = db.execute("SELECT * FROM like WHERE image_id = ? AND user_id = ?", like, session["user_id"])
                 if not checkliked:
                     db.execute("UPDATE images SET likes = likes + 1 WHERE id = ?", like)
