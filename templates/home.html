@@ -17,7 +17,12 @@
             </div>
             <p style="text-align: center;">Post by: {{ image['username'] }}</p>
             <div style="text-align: center;">
-                <form action="/" method="post"><button name="like" class="{{ image['colour']}}" value="{{ image['id']}}"><img src="/static/like.png"></button></form>
+                {% if image['colour'] == 0 %}
+                    <form action="/" method="post"><button name="like" style="background-color: transparent;" value="{{ image['id']}}"><img src="/static/like.png"></button></form>
+                {% elif image['colour'] == 1 %}
+                    <form action="/" method="post"><button name="like" style="background-color: green;" value="{{ image['id']}}"><img src="/static/like.png"></button></form>
+                {% endif %}
+                <p> Post likes: {{ image['likes']}}</p>
             </div>
         </div>
         <br>

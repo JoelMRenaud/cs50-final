@@ -39,10 +39,10 @@ def home():
     rows = db.execute("SELECT * FROM images ORDER BY id DESC")
     alreadyliked = db.execute("SELECT image_id FROM like WHERE user_id = ?", session["user_id"])
     for row in rows:
-        row['colour'] = "transparent"
+        row['colour'] = 0
         for like in alreadyliked:
             if row['id'] == like['image_id']:
-                row['colour'] = "green"
+                row['colour'] = 1
     return render_template("home.html", images=rows, admin=admin)
     
 
