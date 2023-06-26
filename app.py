@@ -27,11 +27,14 @@ def home():
         like = request.form.get("like")
         if admin:
             db.execute("DELETE FROM images WHERE id =  ?", admin)
+            db.execute("DELETE FROM like WHERE image_id =  ?", admin)
         if like:
-            checkliked = db.execute("SELECT * FROM like WHERE image_id = ? AND user_id = ?", like, session["user_id"])
-            if not checkliked:
-                db.execute("UPDATE images SET likes = likes + 1 WHERE id = ?", like)
-                db.execute("INSERT INTO like (image_id, user_id) VALUES (?, ?)", like, session["user_id"])
+            exist = db.execute("SELECT id FROM images WHERE id = ?", like)
+            if exist:
+                checkliked = db.execute("SELECT * FROM like WHERE image_id = ? AND user_id = ?", like, session["user_id"])
+                if not checkliked:
+                    db.execute("UPDATE images SET likes = likes + 1 WHERE id = ?", like)
+                    db.execute("INSERT INTO like (image_id, user_id) VALUES (?, ?)", like, session["user_id"])
     if session["user_id"] == 1:
         admin = 1
     else:
