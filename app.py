@@ -45,19 +45,23 @@ def home():
             if row['id'] == like['image_id']:
                 row['colour'] = 1
     """Check for total amount likes for cats and dogs"""
-    
+
     return render_template("home.html", images=rows, admin=admin)
     
 
 @app.route("/post", methods=["GET", "POST"])
 def post():
     if request.method == "POST":
-
-        if not request.form.get("image"):
+        image = request.form.get("image")
+        animal = request.form.get("animal"
+        if not image:
             return apology("must provide image address", 403)
-        
+        elif not animal:
+            return apology("must provide animal type", 403)
+        elif animal == "error":
+            return apology("must be cat or dog", 403)
         else:
-            db.execute("INSERT INTO images (address, username, likes) VALUES (?, ?, 0)", request.form.get("image"), session["username"])
+            db.execute("INSERT INTO images (address, username, likes, animal) VALUES (?, ?, 0, ?)", image, session["username"], animal)
             return redirect("/")
     else:
         return render_template("/post.html")
