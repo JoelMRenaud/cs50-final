@@ -45,7 +45,8 @@ def home():
             if row['id'] == like['image_id']:
                 row['colour'] = 1
     """Check for total amount likes for cats and dogs"""
-
+    dog = db.execute("SELECT SUM(likes) FROM images WHERE animal = ?", "dog")
+    cat = db.execute("SELECT SUM(likes) FROM images WHERE animal = ?", "cat")
     return render_template("home.html", images=rows, admin=admin)
     
 
