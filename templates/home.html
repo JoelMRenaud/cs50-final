@@ -6,6 +6,7 @@
 {% block body %}
 
     <img src="/static/Cats vs Dogs.png" alt="Cats_vs_dogs_img", width="1200", class="center">
+    <h2></h2>
     <hr>
     {% for image in images %}
         <div id="post">
@@ -15,7 +16,7 @@
                 <div class="child"><form action="/" method="post"><button name="admin" value="{{ image['id']}}"><img class="admin", src="/static/Red_X.png"></button></form></div>
                 {% endif %}
             </div>
-            <p style="text-align: center;">Post by: {{ image['username'] }}</p>
+            <p style="text-align: center;">post by: {{ image['username'] }}</p>
             <div style="text-align: center;">
                 {% if image['colour'] == 0 %}
                     <form action="/" method="post"><button name="like" style="background-color: transparent;" value="{{ image['id']}}"><img src="/static/like.png"></button></form>
