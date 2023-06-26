@@ -66,3 +66,7 @@ body {
   width: 700px;
   border: 10px solid #28aad2;
 }
+
+.like {
+  background-color: red;
+}
