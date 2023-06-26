@@ -7,6 +7,13 @@
 
     <img src="/static/Cats vs Dogs.png" alt="Cats_vs_dogs_img", width="1200", class="center">
     <h1 style="text-align: center;"> {{ cat }}    VS   {{ dog }}</h2>
+    {% if dog > cat %}
+        <h2>Dogs are winning</h2>
+    {% elif dog < cat %}
+        <h2>Cats are winning</h2>
+    {% else %}
+        <h2>tie</h2>
+    {% endif %}
     <hr>
     {% for image in images %}
         <div id="post">
