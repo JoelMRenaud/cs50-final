@@ -47,7 +47,7 @@ def home():
     """Check for total amount likes for cats and dogs"""
     dog = db.execute("SELECT SUM(likes) FROM images WHERE animal = ?", "dog")
     cat = db.execute("SELECT SUM(likes) FROM images WHERE animal = ?", "cat")
-    return render_template("home.html", images=rows, admin=admin, cat=cat[0]['SUM(likes)'], dog=dog)
+    return render_template("home.html", images=rows, admin=admin, cat=cat[0]['SUM(likes)'], dog=dog[0]['SUM(likes)'])
     
 
 @app.route("/post", methods=["GET", "POST"])
