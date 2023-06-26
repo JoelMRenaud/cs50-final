@@ -28,8 +28,8 @@ def home():
         if admin:
             db.execute("DELETE FROM images WHERE id =  ?", admin)
         if like:
-            alreadyliked = db.execute("SELECT * FROM like WHERE image_id = ? AND user_id = ?", like, session["user_id"])
-            if not alreadyliked:
+            checkliked = db.execute("SELECT * FROM like WHERE image_id = ? AND user_id = ?", like, session["user_id"])
+            if not checkliked:
                 db.execute("UPDATE images SET likes = likes + 1 WHERE id = ?", like)
                 db.execute("INSERT INTO like (image_id, user_id) VALUES (?, ?)", like, session["user_id"])
     if session["user_id"] == 1:
@@ -37,6 +37,13 @@ def home():
     else:
         admin = 0
     rows = db.execute("SELECT * FROM images ORDER BY id DESC")
+    alreadyliked = db.execute("SELECT image_id FROM like WHERE user_id = ?", session["user_id"])
+    for row in rows:
+        for like in alreadyliked:
+            if row['id'] == like['image_id']:
+                row['colour'] = "green"
+        if row['colour'] != "green":
+            row['colour'] = "transparent"
     return render_template("home.html", images=rows, admin=admin)
     
 
