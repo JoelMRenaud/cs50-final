@@ -29,14 +29,6 @@ a.nav-link {
   margin-right: auto;
 }
 
-.postimg {
-  min-width : 500px;
-  max-width : 600px;
-  object-fit: contain;
-  border: 4px solid lightslategray;
-  text-align: center !important;
-}
-  
 .topnav a:hover {
   background-color: #ddd;
   color: black;
@@ -45,6 +37,16 @@ a.nav-link {
 body {
   background-color: #196880d7;
 }
+.postimg {
+  min-width : 500px;
+  max-width : 600px;
+  object-fit: contain;
+  border: 4px solid lightslategray;
+  text-align: center !important;
+}
+  
+
+
 
 .admin {
   width: 50; 
